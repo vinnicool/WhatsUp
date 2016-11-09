@@ -1,0 +1,15 @@
+﻿@using WhatsUp.Models;
+
+@model Contact
+@{
+    ViewBag.Title = "Verwijder contact";
+}
+
+<h2>Delete</h2>
+<p> Weet u zeker dat u contact @Model.Voornaam @Model.Achternaam verwijderen?</p>
+<form name="form" method="POST">
+<input type="Submit" name="Submit" />
+<p> </p>
+</form>
+<a href="/Contact/Index"><button name="Back" >Terug</button></a> <!-- Terug naar index pagina -->
+

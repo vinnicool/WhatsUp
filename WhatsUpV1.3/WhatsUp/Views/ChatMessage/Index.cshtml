@@ -1,0 +1,15 @@
+﻿@using WhatsUp.Models;
+@{
+    ViewBag.Title = "Index";
+}
+<!--model IEnumerable<Contact> -->
+@model IEnumerable<WhatsUp.Models.LastMessage>
+<h2>Index</h2>
+
+@foreach (var lm in Model)
+{
+    <h3>
+        @Html.ActionLink(lm.OtherAccount.Voornaam + " "+ lm.OtherAccount.Achternaam, "Chat", "ChatMessage", new { id = lm.OtherAccount.Id }, null) 
+    </h3>
+        <p>@lm.ChatMessage  &emsp; @if (lm.RecievedAt != default(DateTime)) { @(lm.RecievedAt) }</p>
+}

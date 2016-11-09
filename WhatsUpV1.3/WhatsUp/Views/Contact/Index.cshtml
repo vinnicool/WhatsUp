@@ -1,0 +1,22 @@
+﻿@using WhatsUp.Models; 
+@{
+    ViewBag.Title = "Index";
+}
+@model IEnumerable<Contact>
+<h2>Mijn contacten</h2>
+<h3>Voeg contact toe:</h3>
+<h4>
+@Html.ActionLink("Add", "Add", "Contact", null) </h4>
+<p></p>
+<h3>Contacten:</h3>
+<p></p>
+@foreach(Contact contact in Model)
+{
+    <h3> @contact.Voornaam @contact.Achternaam </h3>
+    <h4>
+   @Html.ActionLink("Edit", "Edit", "Contact" , new { id = contact.Id }, null)
+    &emsp;
+   @Html.ActionLink("Delete", "Delete", "Contact", new { id = contact.Id }, null)
+    </h4>
+        
+}

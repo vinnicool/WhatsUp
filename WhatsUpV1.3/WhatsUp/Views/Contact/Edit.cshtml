@@ -1,0 +1,38 @@
+﻿
+@model WhatsUp.Models.Contact
+@{
+    ViewBag.Title = "Wijzig contact";
+}
+
+<h2>Edit</h2> <!-- Editten van een pagina -->
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Voornaam) <br/>
+    @Html.TextBoxFor(m => m.Voornaam)
+    <br/> <br/>
+    @Html.LabelFor(m => m.Achternaam) <br/>
+    @Html.TextBoxFor(m => m.Achternaam)
+    <br/> <br/>
+    @Html.LabelFor(m => m.Email) <br/>
+    @Html.TextBoxFor(m => m.Email)
+    <br/> <br/>
+    @Html.LabelFor(m => m.Telefoonnr) <br/>
+    @Html.TextBoxFor(m => m.Telefoonnr)
+    <br/><br/>
+    <input type="submit" formmethod="post" name="submit" value="Edit"/>
+}
+
+
+<!-- <form name="Formulier" method="POST">
+<p>Voornaam: </p>
+<input type="Text" name="Voornaam" value="//Model.Voornaam"/>
+<p>Achternaam: </p>
+<input type="Text" name="Achternaam" value="//Model.Achternaam"/>
+<p>E-mail: </p>
+<input type="Text" name="Email" value="//Model.Email" />
+<p>Telefoon: </p>
+<input type="Text" name="Telefoonnr" value="//Model.Telefoonnr"/> <p></p>
+<input type="Submit" name="Submit" />
+</form> -->
+

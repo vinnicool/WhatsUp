@@ -1,0 +1,28 @@
+﻿@using WhatsUp.Models;
+@{
+    ViewBag.Title = "Chat";
+}
+@model IEnumerable<WhatsUp.Models.ChatMessage>
+<h2>@ViewBag.ContactNaam</h2>
+<p></p>
+<form name="form" method="POST">
+<input type="text" name="berricht" size="50" maxlength="200"/> 
+<input type="Submit" name="submit" />
+</form> 
+
+<section name="chat" style="margin-top: 2em; margin-right: 54em; border-style: groove; width: 80em;">
+    @{Account acc = (Account)Session["loggedin_account"];}
+    
+    @foreach(var c in Model)
+    {
+        if(c.SenderAccountId == acc.Id)
+        {
+        <p style="white-space: initial; word-wrap: break-word; color: blue">@c.Datetime.ToShortTimeString() You:  @c.Message</p>        
+        }
+        else
+        {
+            <p style="white-space: initial; word-wrap: break-word; color: red">@c.Datetime.ToShortTimeString() @ViewBag.ContactNaam: @c.Message</p>
+        }
+    }
+    
+</section>

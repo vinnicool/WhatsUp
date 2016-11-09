@@ -1,0 +1,60 @@
+﻿@using WhatsUp.Models
+@{
+    ViewBag.Title = "Register";
+}
+@model RegisterModel
+<h2>Registreren</h2>
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Voornaam)
+    <br />
+    @Html.TextBoxFor(m => m.Voornaam)
+    //@Html.ValidationMessageFor(m => m.Voornaam) 
+    <br /> <br />
+    @Html.LabelFor(m => m.Achternaam)
+    <br/>
+    @Html.TextBoxFor(m => m.Achternaam)
+    //@Html.ValidationMessageFor(m => m.Achternaam)
+    <br /> <br/>
+    @Html.LabelFor(m => m.Email)
+    <br/>
+    @Html.TextBoxFor(m => m.Email)
+    //@Html.ValidationMessageFor(m => m.Email)
+    <br /><br/>
+    @Html.LabelFor(m => m.Wachtwoord)
+    <br/>
+    @Html.PasswordFor(m => m.Wachtwoord)
+    //@Html.ValidationMessageFor(m => m.Wachtwoord)
+    <br /><br />
+    @Html.LabelFor(m => m.BevestigWachtwoord)
+    <br/>
+    @Html.PasswordFor(m => m.BevestigWachtwoord)
+    //@Html.ValidationMessageFor(m => m.BevestigWachtwoord)
+    <br /><br/>
+    @Html.LabelFor(m => m.Telefoonnr)
+    <br/>
+    @Html.TextBoxFor(m => m.Telefoonnr)
+    //@Html.ValidationMessageFor(m => m.Telefoonnr)
+    <br /> <br />
+    <input type="Submit" value="Register" method="Post"/>
+
+}
+<!--
+<p>Voornaam:</p>
+<input type="Text" name="Voornaam" />
+<p>Achternaam:</p>
+<input type="Text" name="Achternaam" />
+<p>E-mail:</p>
+<input type="email" name="Email" />
+<p>Wachtwoord:</p>
+<input type="password" name="Wachtwoord" />
+<p>Bevestig wachtwoord:</p>
+<input type="password" name="BevestigWachtwoord" />
+<p>Telefoonnummer</p>
+<input type="text" name="Telefoonnr" />
+<p></p>
+<input type="Submit" name="submit" />
+</form>
+-->
+

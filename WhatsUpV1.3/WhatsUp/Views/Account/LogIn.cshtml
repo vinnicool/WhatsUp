@@ -1,0 +1,29 @@
+﻿@using WhatsUp.Models;
+@{
+    ViewBag.Title = "LogIn";
+}
+@model LoginModel
+<h2>Inloggen</h2> 
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Email)
+    <br/>
+    @Html.TextBoxFor(m => m.Email)
+    <br/><br/>
+    @Html.LabelFor(m => m.Wachtwoord)
+    <br/>
+    @Html.PasswordFor(m => m.Wachtwoord)
+    <br/><br/>
+    <input type="Submit" name="Submit" method="Post"/>
+}
+<!-- Oude manier
+<form name="Form" method="post">
+<p>E-mail</p>
+<input type="Text" name="Email" />
+<p>Wachtwoord</p>
+<input type="password" name="Wachtwoord" />
+<p></p>
+<input type="submit" name="Submit" />
+</form>
+<p>Nog geen account? Registreer je dan snel. <a href="/Account/Register">Registreren</a></p> -->

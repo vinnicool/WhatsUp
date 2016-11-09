@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Add Contact";
+}
+@model WhatsUp.Models.Contact
+<h2>Voeg Contact toe</h2> <!-- Toevoegen van een contact -->
+@Html.ValidationSummary()
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Voornaam) <br/>
+    @Html.TextBoxFor(m => m.Voornaam)
+    <br/> <br/>
+    @Html.LabelFor(m => m.Achternaam) <br/>
+    @Html.TextBoxFor(m => m.Achternaam)
+    <br/> <br/>
+    @Html.LabelFor(m => m.Email) <br/>
+    @Html.TextBoxFor(m => m.Email) 
+    <br/> <br/>
+    @Html.LabelFor(m => m.Telefoonnr) <br/>
+    @Html.TextBoxFor(m => m.Telefoonnr)
+    <br/> <br/>
+    <input type="submit" formmethod="post" name=""submit" value="Add contact"/>
+}
+<!-- 
+<form name="Formulier" method="POST">
+<p>Voornaam: </p>
+<input type="Text" name="Voornaam" />
+<p>Achternaam: </p>
+<input type="Text" name="Achternaam" />
+<p>E-mail: </p>
+<input type="Text" name="Email" />
+<p>Telefoon: </p>
+<input type="Text" name="Telefoonnr" /> <p></p>
+<input type="Submit" name="Submit" />
+</form> -->
